@@ -1,14 +1,19 @@
-import React from 'react'
+import React, { Component } from 'react'
+import './Home.css';
+import './App.css';
 
-window.addEventListener("load", function () {
-    const loader = document.querySelector(".loader");
-    console.log(loader);
-});
+class Home extends Component {
+    render() {
+        return (
+            <div className="home">
+                <div class="text text-center">
+                    <div className="square center">
+                        <div>queue will go here</div>
+                    </div>
+                </div>
+            </div>
+        );
+    }
+}
 
-export const Home = () => (
-    <div className="about">
-        <div className="row">
-            
-        </div>
-    </div>
-)
+export default Home;
