@@ -1,0 +1,64 @@
+.navbar {
+    top: 0;
+    margin-bottom: -15px;
+    border-bottom: 3px solid white;
+    background: rgb(0, 0, 0);
+    color: #fff;
+    width: 100%;
+    z-index: 2;
+    flex-direction: column;
+    text-decoration: none;
+}
+
+.navbar .fa-plane {
+    font-size: 60px;
+    color: #fff;
+    text-decoration: none;
+}
+
+.navbar .title {
+    font-family: "Times New Roman", Times, serif;
+    color: white;
+    text-decoration: none;
+}
+
+.navbar .link {
+    margin-right: 45px;
+    font-family: "Times New Roman", Times, serif;
+    font-size: 40px;
+    color: #fff !important;
+    text-decoration: none;
+}
+
+.navbar .Form {
+    margin-right: 45px;
+    text-decoration: none;
+}
+
+.heading {
+	font-size: 30px;
+	padding: 16px 0;
+	color: white;
+	text-align: center;
+}
+/*Container*/
+
+.search-label {
+	position: relative;
+}
+.container input {
+	width: 100%;
+	padding: 16px;
+	font-size: 20px;
+	font-style: italic;
+	color: #444;
+	box-sizing: border-box;
+	outline: none;
+}
+.search-icon {
+	position: absolute;
+	top: -10px;
+	font-size: 24px;
+	color: #555;
+	right: 18px;
+}
