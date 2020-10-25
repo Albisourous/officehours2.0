@@ -1,22 +1,70 @@
-import React, { Component } from 'react'
-import Dropdown from 'react-dropdown';
-import 'react-dropdown/style.css';
-import App from "./App";
+import React, { Component } from 'react';
+import Select from "react-select";
+// import Dropdown from 'react-dropdown';
+// import 'react-dropdown/style.css';
+// import App from "./App";
+import fire from './Fire';
+import './Queue.css';
 import './App.css';
 
-const tags = ['style check', 'bug fixing', 'part 1', 'part 2', 'part 3'];
+const tags = [
+    { value: 'style', label: 'style check' },
+    { value: 'bug', label: 'bug fixing' },
+    { value: 'general', label: 'general question' }
+];
 const defaultTag = 'style check';
 
 class Queue extends Component {
+    // stores current values' states
+    state = {
+        name: "",
+        tags: ""
+    }
+
+    // updates name state
+    handleName = e => {
+        this.setState({
+            name: e.target.value
+        })
+    }
+
+    // updates tags state
+    handleTags = (values) => {
+        let parsedVals = values.reduce((map, obj) => (map[obj.value] = obj.label, map), {});
+        this.setState({
+            tags: parsedVals
+        });
+    }
+
+    // updates firebase db w/ user's name & tags
+    handleSubmit = e => {
+        //let messageRef = fire.database().ref('users').orderByKey().limitToLast();
+        //console.log(fire.database().ref('users').orderByKey());
+        let val = {
+            name: this.state.name,
+            tags: this.state.tags
+        };
+        fire.database().ref('users').push(val);
+        this.setState({
+            name: "",
+            tags: ""
+        })
+        //console.log(messageRef);
+    }
+
+    // renders the submission form
     render() {
         return (
             <div className="queue">
                 <div class="text text-center">
-                    <div className="square center">
-                        <label>Name (first and last): <input type="text" name="name" /> </label>
+                    <div class="square center infobox">
                         <br />
-                        <label>Tag: <Dropdown options={tags} onChange={this._onSelect} value={defaultTag} placeholder="Tag" /> </label>
                         <br />
+                        <label>Name: <input type="text" value={this.state.name} onChange={this.handleName} /> </label>
+                        <br />
+                        <Select options={tags} onChange={this.handleTags} placeholder="tags" isMulti />
+                        <br />
+                        <label>Submit: <input type="submit" name="join_queue" onClick={this.handleSubmit} /> </label>
                     </div>
                 </div>
             </div>

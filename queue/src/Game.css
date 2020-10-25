@@ -1,0 +1,54 @@
+td {
+    height: 170px;
+    width: 170px;
+    background-color: #C0C0C0;
+    border: 1.5px solid;
+    border-top-color: #ffffff;
+    border-right-color: #7B7B7B;
+    border-bottom-color: #7B7B7B;
+    border-left-color: #ffffff;
+    text-align: center;
+    vertical-align: middle;
+    justify-content: center;
+}
+
+table.center {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.btn-user {
+    font-family: 'MS Sans Serif';
+    text-align: center;
+    vertical-align: middle;
+    font-size: 120px;
+    height: 170px;
+    width: 170px;
+    background-color: rgb(252, 226, 207);
+    color: black;
+    border-bottom: 2px solid black;
+    border-left: 2px solid black;
+    border-top: 2px solid black;
+    border-right: 2px solid black;
+    box-shadow: 3px 3px 1px grey;
+}
+
+.btn-user:hover {
+    background-color: #74ebd5;
+    color: slategray;
+    cursor: pointer;
+}
+
+#winner {
+    font-size: 30px;
+    text-align: center;
+    color: linear-gradient(#c2e59c, #64b3f4);
+}
+
+.btn-primary {
+    display: block;
+    text-align: center;
+    margin: auto;
+    background-color: rgb(51, 184, 173);
+    border: none;
+}
