@@ -17,12 +17,12 @@ class Clock extends React.Component {
     render() { return (<h2>The current time is {this.state.date.toLocaleTimeString()}</h2>); }
 }
 
-var data = [
-    {
-        name: "placeholder queue",
-        tags: "pogchamp",
-    },
-];
+// var data = [
+//     {
+//         name: "placeholder queue",
+//         tags: "pogchamp",
+//     },
+// ];
 
 class Home extends Component {
 

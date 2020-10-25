@@ -67,17 +67,19 @@ class Queue extends Component {
                         <br />
                         <label><input type="text" class="name_data" placeholder="Name" value={this.state.name} onChange={this.handleName} /> </label>
                         <br />
-                        <Select options={tags} onChange={this.handleTags} theme={(theme) => ({
-                            ...theme,
-                            borderRadius: 0,
-                            colors: {
-                                ...theme.colors,
-                                text: 'orangered',
-                                primary25: 'rgba(97, 198, 215)',
-                                primary: 'black',
-                            },
-                        })} placeholder="tags" isMulti />
-                        <br />
+                        <div class = "tags-div">
+                            <Select className="tags-selector" options={tags} onChange={this.handleTags} theme={(theme) => ({
+                                ...theme,
+                                borderRadius: 0,
+                                colors: {
+                                    ...theme.colors,
+                                    text: 'orangered',
+                                    primary25: 'rgba(97, 198, 215)',
+                                    primary: 'black',
+                                },
+                            })} placeholder="tags" isMulti />
+                            <br />
+                        </div>
                         <label><input value="Submit" type="submit" name="join_queue" class="submit_data" onClick={this.handleSubmit} /> </label>
                     </div>
                 </div>

@@ -38,3 +38,13 @@ input {
     padding-bottom: 15px;
     background: rgba(194, 248, 249);
 }
+
+.tags-selector {
+    width: 100%;
+}
+
+.tags-div {
+    margin-left: 30%;
+    margin-right: 30%;
+    /* display: block; */
+}
