@@ -8,6 +8,9 @@
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
     "firebase": "^7.24.0",
+    "jquery": "^3.5.1",
+    "lottie-react-native": "^3.5.0",
+    "lottie-web": "^5.7.3",
     "material-table": "^1.69.1",
     "material-ui": "^0.20.2",
     "react": "^17.0.1",
@@ -16,9 +19,11 @@
     "react-chat-window": "^1.2.1",
     "react-dom": "^17.0.1",
     "react-firebase-hooks": "^2.2.0",
+    "react-lottie": "^1.2.3",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.0",
     "react-select": "^3.1.0",
+    "react-tap-event-plugin": "^3.0.3",
     "web-vitals": "^0.2.4"
   },
   "scripts": {

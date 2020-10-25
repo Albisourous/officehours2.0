@@ -18,6 +18,7 @@ class Queue extends Component {
     // stores current values' states
     state = {
         name: "",
+        time: null,
         tags: ""
     }
 
@@ -42,11 +43,13 @@ class Queue extends Component {
         //console.log(fire.database().ref('users').orderByKey());
         let val = {
             name: this.state.name,
+            time: Date.now(),
             tags: this.state.tags
         };
         fire.database().ref('users').push(val);
         this.setState({
             name: "",
+            time: null,
             tags: ""
         })
         //console.log(messageRef);
@@ -62,7 +65,16 @@ class Queue extends Component {
                         <br />
                         <label>Name: <input type="text" value={this.state.name} onChange={this.handleName} /> </label>
                         <br />
-                        <Select options={tags} onChange={this.handleTags} placeholder="tags" isMulti />
+                        <Select options={tags} onChange={this.handleTags} theme={(theme) => ({
+                            ...theme,
+                            borderRadius: 0,
+                            colors: {
+                                ...theme.colors,
+                                text: 'orangered',
+                                primary25: 'hotpink',
+                                primary: 'black',
+                            },
+                        })} placeholder="tags" isMulti />
                         <br />
                         <label>Submit: <input type="submit" name="join_queue" onClick={this.handleSubmit} /> </label>
                     </div>

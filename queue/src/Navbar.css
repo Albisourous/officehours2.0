@@ -1,8 +1,6 @@
 .navbar {
     top: 0;
-    margin-bottom: -15px;
-    border-bottom: 3px solid magenta;
-    background: rgb(0, 0, 0);
+    background: rgb(30, 30, 30);
     color: #fff;
     width: 100%;
     z-index: 2;
@@ -23,7 +21,8 @@
 }
 
 .navbar .link {
-    margin-right: 45px;
+    margin: 20px;
+    padding: 20px;
     font-family: "Times New Roman", Times, serif;
     font-size: 40px;
     color: #fff !important;

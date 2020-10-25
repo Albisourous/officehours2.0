@@ -8,7 +8,7 @@ import Game from "./Game";
 import About from "./About";
 import Chat from "./Chat";
 // import { Launcher } from 'react-chat-window';
-// import fire from './Fire';
+//import UncontrolledLottie from './UncontrolledLottie';
 
 function App() {
 
@@ -20,6 +20,7 @@ function App() {
           <Route path="/" exact> <Home /></Route>
           <Route path="/home" exact> <Home /></Route>
           <Route path="/queue" exact> <Queue /></Route>
+          {/* {<Route path="/queue" exact> <Game /></Route>} */}
           <Route path="/game" exact> <Game /></Route>
           <Route path="/about" exact> <About /></Route>
         </Switch>
