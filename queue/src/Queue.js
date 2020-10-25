@@ -31,7 +31,7 @@ class Queue extends Component {
 
     // updates tags state
     handleTags = (values) => {
-        let parsedVals = values.reduce((map, obj) => (map[obj.value] = obj.label, map), {});
+        let parsedVals = values.map((e) => e.value).sort().join(', ');
         this.setState({
             tags: parsedVals
         });

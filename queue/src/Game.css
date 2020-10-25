@@ -1,4 +1,4 @@
-td {
+.button {
     height: 170px;
     width: 170px;
     background-color: #C0C0C0;
@@ -12,12 +12,13 @@ td {
     justify-content: center;
 }
 
-table.center {
-    margin-left: auto;
+.game-board {
+    margin-top: 10%;
+    margin-left: 30%;
     margin-right: auto;
 }
 
-.btn-user {
+.squareGame {
     font-family: 'MS Sans Serif';
     text-align: center;
     vertical-align: middle;
@@ -33,7 +34,7 @@ table.center {
     box-shadow: 3px 3px 1px grey;
 }
 
-.btn-user:hover {
+.squareGame:hover {
     background-color: #74ebd5;
     color: slategray;
     cursor: pointer;
@@ -45,10 +46,12 @@ table.center {
     color: linear-gradient(#c2e59c, #64b3f4);
 }
 
-.btn-primary {
-    display: block;
-    text-align: center;
-    margin: auto;
-    background-color: rgb(51, 184, 173);
-    border: none;
+.game {
+    align-content: inline-block;
+}
+
+.game-info {
+    margin-top: 10px;
+    margin-left: 30%;
+    margin-right: auto;
 }

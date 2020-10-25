@@ -12,17 +12,10 @@ class About extends Component {
         return (
             <div className="about">
                 <div className="text text-center">
-                    <div className="square center">
-                        <div class="content">
-                            <img src="https://picsum.photos/300/300/?random" />
-                        </div>
-                        <div class="loader-wrapper">
-                            <span class="loader"><span class="loader-inner"></span></span>
-                        </div>
-
-                        <script>
-                            $(window).on("load",function(){$(".loader-wrapper").fadeOut("slow")});
-                        </script>
+                    {/* <div class="loader-wrapper">
+                        <span class="loader"><span class="loader-inner"></span></span>
+                    </div> */}
+                    <div className="square center content">
                         <h2> About the Project</h2>
                         <div>The COVID-19 pandemic has been a source of pain for teachers and TAs just as much as it has been for students.
                         As online classes have become increasingly popular not only from the pandemic but as a whole, it's increasingly necessary for TAs to have centralized & organized methods of managing help hours.
