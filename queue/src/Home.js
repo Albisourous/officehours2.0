@@ -19,11 +19,10 @@ class Clock extends React.Component {
 
 var data = [
     {
-        name: "Nobody in queue",
+        name: "placeholder queue",
         tags: "pogchamp",
     },
 ];
-
 
 class Home extends Component {
 
@@ -41,19 +40,47 @@ class Home extends Component {
                     var i = 0;
 
                     snapshot.forEach(function (data) {
-                        var pos = ++i;
+
                         var name = data.val().name;
                         var tags = data.val().tags;
-                        content += '<tr>';
-                        content += '<td>' + pos + '</td>';
-                        content += '<td>' + name + '</td>';
-                        content += '<td>' + tags + '</td>';
-                        content += '</tr>';
+                        if (name != null) {
+                            var pos = ++i;
+                            content += '<tr>';
+                            content += '<td>' + pos + '</td>';
+                            content += '<td>' + name + '</td>';
+                            content += '<td>' + tags + '</td>';
+                            content += '</tr>';
+                        }
                     });
 
                     $('#ex-table').append(content);
                     // return content;
                 }
+            });
+        } catch (err) {
+            console.log(err);
+        }
+    }
+
+    removeFirst() {
+        try {
+            var toBeRemoved;
+            var i = 0;
+            rtdb.ref('users').orderByChild('time').limitToFirst(1).on('child_added', function (usersSnapshot) {
+                console.log("key=" + usersSnapshot.key);
+                if (i++ == 0)
+                    toBeRemoved = rtdb.ref('users/' + usersSnapshot.key).set(null);
+            });
+        } catch (err) {
+            console.log(err);
+        }
+    }
+
+    removeAll() {
+        try {
+            var toBeRemoved;
+            rtdb.ref('users').orderByChild('time').limitToFirst(1).on('child_added', function (usersSnapshot) {
+                toBeRemoved = rtdb.ref('users/' + usersSnapshot.key).set(null);
             });
         } catch (err) {
             console.log(err);
@@ -68,31 +95,7 @@ class Home extends Component {
                         <h1>Welcome to Office Hours!</h1>
                         <Clock />
                         <h2>The current queue is:</h2>
-                        <label><input value="Remove First" type="submit" name="update_data" onClick={this.forceUpdateHandler} />  </label>
-                        {/* 
-                        <div className="queueTable">
-                            <MuiThemeProvider options={{ search: false }}>
-                                <Table height={"300px"} fixedHeader={true}>
-                                    <TableHeader>
-                                        <TableRow>
-                                            <TableHeaderColumn tooltip="Position"> Position </TableHeaderColumn>
-                                            <TableHeaderColumn tooltip="Name"> Name </TableHeaderColumn>
-                                            <TableHeaderColumn tooltip="Tags"> Tags </TableHeaderColumn>
-                                        </TableRow>
-                                    </TableHeader>
-                                    <TableBody showRowHover={true}>
-                                        {data.map((row, index) =>
-                                            <TableRow key={index}>
-                                                <TableRowColumn>{index}</TableRowColumn>
-                                                <TableRowColumn>{row.name}</TableRowColumn>
-                                                <TableRowColumn>{row.tags}</TableRowColumn>
-                                            </TableRow>
-                                        )}
-                                    </TableBody>
-                                </Table>
-                            </MuiThemeProvider>
-                        </div> */}
-
+                        <label><input value="Remove First" type="submit" name="update_data" onClick={this.removeFirst} />  </label>
                         <div>
                             <table class="table table-striped center" id="ex-table">
                                 <thead class="thead-inverse">
@@ -111,6 +114,7 @@ class Home extends Component {
                                 </tbody>
                             </table>
                         </div>
+                        <label><input value="Clear Queue" type="submit" name="update_data" onClick={this.removeAll} />  </label>
                     </div>
                 </div>
             </div >
