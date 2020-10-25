@@ -22,22 +22,16 @@ label .queue_data {
 
 .update_data {
     border: 3px solid black;
-    border-radius: 10px 90px;
+    border-radius: 90px 90px;
     padding: 50px;
     padding-top: 15px;
     padding-bottom: 15px;
     background: rgba(194, 248, 249);
 }
 
-.update_data:hover {
-    background: rgba(144, 228, 233);
-    border-radius: 90px 10px;
-    transition: .75s;
-}
-
 .remove_data {
     border: 3px solid black;
-    border-radius: 10px 90px;
+    border-radius: 90px 90px;
     padding: 50px;
     padding-top: 15px;
     padding-bottom: 15px;
@@ -46,6 +40,12 @@ label .queue_data {
 
 .remove_data:hover {
     background: red;
-    border-radius: 90px 10px;
+    border-radius: 90px 90px;
+    transition: .75s;
+}
+
+.update_data:hover {
+    background: rgba(144, 228, 233);
+    border-radius: 90px 90px;
     transition: .75s;
 }

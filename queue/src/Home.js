@@ -8,7 +8,7 @@ import injectTapEventPlugin from 'react-tap-event-plugin';
 import $ from 'jquery';
 import fire from './Fire';
 let rtdb = fire.database();
-
+var flag = 0;
 class Clock extends React.Component {
     state = { date: new Date() }
     componentDidMount() { this.timerId = setInterval(() => this.tick(), 1000); }
@@ -69,11 +69,19 @@ class Home extends Component {
             var i = 0;
             rtdb.ref('users').orderByChild('time').limitToFirst(1).on('child_added', function (usersSnapshot) {
                 console.log("key=" + usersSnapshot.key);
-                if (i++ == 0)
+                if (i++ == 0 && flag == 0) {
                     toBeRemoved = rtdb.ref('users/' + usersSnapshot.key).set(null);
+                    flag = 1;
+                }
             });
         } catch (err) {
             console.log(err);
+        }
+        if (flag == 1) {
+            window.location.reload(false);
+        }
+        else {
+            flag = 0;
         }
     }
 
@@ -87,6 +95,7 @@ class Home extends Component {
         } catch (err) {
             console.log(err);
         }
+        window.location.reload();
     }
 
     // renders homepage (queue & other elements)

@@ -63,7 +63,7 @@ class Queue extends Component {
                     <div class="square center infobox">
                         <br />
                         <br />
-                        <label>Name: <input type="text" value={this.state.name} onChange={this.handleName} /> </label>
+                        <label><input type="text" class="name_data" placeholder="Name" value={this.state.name} onChange={this.handleName} /> </label>
                         <br />
                         <Select options={tags} onChange={this.handleTags} theme={(theme) => ({
                             ...theme,
@@ -71,7 +71,7 @@ class Queue extends Component {
                             colors: {
                                 ...theme.colors,
                                 text: 'orangered',
-                                primary25: 'hotpink',
+                                primary25: 'rgba(97, 198, 215)',
                                 primary: 'black',
                             },
                         })} placeholder="tags" isMulti />
