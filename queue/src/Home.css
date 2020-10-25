@@ -12,3 +12,40 @@ th, td {
     width: 500px;
     text-align: center;
 }
+
+label .queue_data {
+    box-sizing: border-box;
+    padding: 2px;
+    color: rgba(181, 246, 247);
+    text-size-adjust: 20px;
+}
+
+.update_data {
+    border: 3px solid black;
+    border-radius: 10px 90px;
+    padding: 50px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    background: rgba(194, 248, 249);
+}
+
+.update_data:hover {
+    background: rgba(144, 228, 233);
+    border-radius: 90px 10px;
+    transition: .75s;
+}
+
+.remove_data {
+    border: 3px solid black;
+    border-radius: 10px 90px;
+    padding: 50px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    background: rgba(194, 248, 249);
+}
+
+.remove_data:hover {
+    background: red;
+    border-radius: 90px 10px;
+    transition: .75s;
+}

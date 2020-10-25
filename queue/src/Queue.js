@@ -76,7 +76,7 @@ class Queue extends Component {
                             },
                         })} placeholder="tags" isMulti />
                         <br />
-                        <label>Submit: <input type="submit" name="join_queue" onClick={this.handleSubmit} /> </label>
+                        <label><input value="Submit" type="submit" name="join_queue" class="submit_data" onClick={this.handleSubmit} /> </label>
                     </div>
                 </div>
             </div>

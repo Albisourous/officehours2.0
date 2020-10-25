@@ -62,6 +62,7 @@ class Home extends Component {
         }
     }
 
+    // removes first entry from queue
     removeFirst() {
         try {
             var toBeRemoved;
@@ -76,6 +77,7 @@ class Home extends Component {
         }
     }
 
+    // removes all entries from queue (clears queue)
     removeAll() {
         try {
             var toBeRemoved;
@@ -87,6 +89,7 @@ class Home extends Component {
         }
     }
 
+    // renders homepage (queue & other elements)
     render() {
         return (
             <div className="home">
@@ -95,8 +98,8 @@ class Home extends Component {
                         <h1>Welcome to Office Hours!</h1>
                         <Clock />
                         <h2>The current queue is:</h2>
-                        <label><input value="Remove First" type="submit" name="update_data" onClick={this.removeFirst} />  </label>
-                        <div>
+                        <label><input value="Remove First" type="submit" name="queue_data" class="update_data" onClick={this.removeFirst} />  </label>
+                        <div class="table-container">
                             <table class="table table-striped center" id="ex-table">
                                 <thead class="thead-inverse">
                                     <tr id="header">
@@ -114,7 +117,7 @@ class Home extends Component {
                                 </tbody>
                             </table>
                         </div>
-                        <label><input value="Clear Queue" type="submit" name="update_data" onClick={this.removeAll} />  </label>
+                        <label><input value="Clear Queue" type="submit" name="queue_data" class="remove_data" onClick={this.removeAll} />  </label>
                     </div>
                 </div>
             </div >

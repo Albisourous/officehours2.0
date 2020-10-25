@@ -14,3 +14,18 @@ label {
 input {
     border-radius: 4px;
 }
+
+.submit_data {
+    border: 3px solid black;
+    border-radius: 10px 90px;
+    padding: 50px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    background: rgba(194, 248, 249);
+}
+
+.submit_data:hover {
+    background: rgba(144, 228, 233);
+    border-radius: 90px 10px;
+    transition: .75s;
+}
