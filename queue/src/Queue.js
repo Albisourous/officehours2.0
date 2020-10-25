@@ -41,18 +41,20 @@ class Queue extends Component {
     handleSubmit = e => {
         //let messageRef = fire.database().ref('users').orderByKey().limitToLast();
         //console.log(fire.database().ref('users').orderByKey());
-        let val = {
-            name: this.state.name,
-            time: Date.now(),
-            tags: this.state.tags
-        };
-        fire.database().ref('users').push(val);
-        this.setState({
-            name: "",
-            time: null,
-            tags: ""
-        })
-        //console.log(messageRef);
+        if (this.state.name.length > 0) {
+            let val = {
+                name: this.state.name,
+                time: Date.now(),
+                tags: this.state.tags
+            };
+            fire.database().ref('users').push(val);
+            this.setState({
+                name: "",
+                time: null,
+                tags: ""
+            })
+            //console.log(messageRef);
+        }
     }
 
     // renders the submission form

@@ -1,7 +1,7 @@
-import React, { Component, useEffect, useRef } from 'react'
+import React, { Component } from 'react'
 import './About.css'
 import './Load.css'
-import $ from 'jquery';
+// import $ from 'jquery';
 
 const helpHoursURL = "https://github.com/SamLab17/HelpHours";
 

@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 import './App.css';
 import './Home.css';
-import { Table, TableBody, TableHeader, TableHeaderColumn, TableRow, TableRowColumn, TextField, MuiThemeProvider } from 'material-ui';
-import MaterialTable from 'material-table'
+// import { Table, TableBody, TableHeader, TableHeaderColumn, TableRow, TableRowColumn, TextField, MuiThemeProvider } from 'material-ui';
+// import MaterialTable from 'material-table'
 // import ReactTable from "react-table";
-import injectTapEventPlugin from 'react-tap-event-plugin';
+// import injectTapEventPlugin from 'react-tap-event-plugin';
 import $ from 'jquery';
 import fire from './Fire';
 let rtdb = fire.database();
@@ -30,12 +30,16 @@ class Home extends Component {
         this.renderPosts();
     }
 
+    componentDidUpdate() {
+        this.renderPosts();
+    }
+
     renderPosts = async () => {
         try {
             rtdb.ref('users').orderByChild('time').once('value', function (snapshot) {
 
                 if (snapshot.exists()) {
-                    data = snapshot;
+                    // data = snapshot;
                     var content = "";
                     var i = 0;
 
@@ -43,6 +47,9 @@ class Home extends Component {
 
                         var name = data.val().name;
                         var tags = data.val().tags;
+                        console.log(tags);
+                        tags = (tags == "") ? "none selected" : tags;
+
                         if (name != null) {
                             var pos = ++i;
                             content += '<tr>';
@@ -53,7 +60,8 @@ class Home extends Component {
                         }
                     });
 
-                    $('#ex-table').append(content);
+                    // $('#queue-table').append(content);
+                    $('#queue-table tr:last').after(content);
                     // return content;
                 }
             });
@@ -95,7 +103,7 @@ class Home extends Component {
         } catch (err) {
             console.log(err);
         }
-        window.location.reload();
+        // window.location.reload(false);
     }
 
     // renders homepage (queue & other elements)
@@ -109,7 +117,7 @@ class Home extends Component {
                         <h2>The current queue is:</h2>
                         <label><input value="Remove First" type="submit" name="queue_data" class="update_data" onClick={this.removeFirst} />  </label>
                         <div class="table-container">
-                            <table class="table table-striped center" id="ex-table">
+                            <table class="table table-striped center" id="queue-table">
                                 <thead class="thead-inverse">
                                     <tr id="header">
                                         <th>Position</th>
