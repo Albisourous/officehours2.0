@@ -1,5 +1,3 @@
-<img src="https://github.com/Albisourous/projectprivacy/blob/master/lock.png" alt="lock" width="250"/>
-
 # OfficeHours 2.0
 
 As the COVID-19 pandemic forces us to continually adapt to new circumstances, we wanted to help improve the effectiveness of online resources and communication. Our team initially took inspiration from the UTCS TA website for the help hours queue-- while this website achieves its goal, we believe that more functionality could be added to make the help process more efficient & effective.
